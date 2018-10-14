@@ -1,0 +1,105 @@
+<div id="global">
+  <h1>Votre recette</h1>
+  <div id="publication">
+    <!--todo traitement de l'image TODO
+			<div class="imageRecette">
+			<img src=""> 
+		</div>
+	-->
+    <div class="formulaire-recette">
+      <form #recetteForm="ngForm" (ngSubmit)="addRecette(recetteForm.value)" class="" novalidate method="post" action="publication.component.html"
+        novalidate>
+        <div class="formRecette">
+          <label for="nom">Nom de la recette</label>
+          <input [(ngModel)]="recette.nom" type="text" minlength="3" maxlenght="30" name="nom" pattern="[a-zA-Z ]*" class="form-control"
+            id="nom" placeholder="nom" required />
+          <p>{{recette.nom}}</p>
+        </div>
+        <br/>
+
+        <div class="formRecette">
+          <label for="categorie">Categorie</label>
+          <select [(ngModel)]="recette.categorie" class="form-control" minlength="3" maxlenght="30" name="categorie" id="categorie"
+            placeholder="categorie" required>
+            <option>Entree</option>
+            <option>Plat</option>
+            <option>Dessert</option>
+          </select>
+          <p>{{recette.categorie}}</p>
+        </div>
+        <br/>
+
+        <div class="formRecette">
+          <label for="duree">Durée</label>
+          <input [(ngModel)]="recette.duree" type="text" name="duree" minlength="1" pattern="[0-9]*" class="form-control" id="duree"
+            placeholder="duree" required />
+          <p>{{recette.duree}}</p>
+        </div>
+        <br/>
+
+        <div class="formRecette">
+          <label for="ingredients">Ingrédients</label>
+          <br/>
+          <input type="button" value="ajouter des ingredients" onclick="">
+          <br/>
+          <input #tabIngredients [(ngModel)]="recette.ingredients" type="text" minlength="3" maxlenght="100" name="ingredients" class="form-control"
+            id="ingredients" placeholder="ingredients" required>
+          <p>
+            {{recette.ingredients}}</p>
+        </div>
+        <br/>
+
+        <div class="formRecette">
+          <label for="difficulte">Difficulté (noter de 1: facile à 5: difficile)</label>
+          <input [(ngModel)]="recette.difficulte" type="text" name="difficulte" minlength="1" pattern="[0-5]" class="form-control"
+            id="difficulte" required placeholder="difficulte">
+          <p>{{recette.difficulte}}</p>
+        </div>
+        <br/>
+
+        <div class="formRecette">
+          <label for="instructions">Instructions</label>
+          <textarea [(ngModel)]="recette.instructions" name="instructions" minlength="3" maxlenght="500" pattern="[a-zA-Z ]*" class="form-control"
+            id="instructions" required placeholder="instructions">
+          </textarea>
+          <p>{{recette.instructions}}</p>
+        </div>
+
+        <div>
+          <button type="submit" [disabled]="!recetteForm.valid">valider</button>
+        </div>
+        <br/>
+      </form>
+    </div>
+
+    <div>
+      <button type="button" class="btn btn-lg btn-outline-primary" (click)="open(recette,content)">
+        Visualiser la recette
+      </button>
+    </div>
+
+  </div>
+</div>
+
+<ng-template #content let-c="close" let-d="dismiss">
+  <div class="modal-header">
+    <h4 class="modal-title">Détails de la {{recette.nom}}</h4>
+    <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <p>Nom de la recette : {{recette.nom}}</p>
+    <p>Catégorie : {{recette.categorie}}</p>
+    <p>Durée (préparation + cuisson) : {{recette.duree}} min</p>
+    <p>Ingrédients : {{recette.ingredients}}</p>
+    <p>Instructions : {{recette.instructions}}</p>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="c('Close click')">Fermer</button>
+  </div>
+</ng-template>
+
+<hr>
+
+<pre>{{closeResult}}</pre>

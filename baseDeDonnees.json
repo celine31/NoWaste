@@ -1,0 +1,110 @@
+/* 1 */
+{
+    "_id" : ObjectId("5ac0e72e1a8fee174c79eab0"),
+    "nom" : "quiche",
+    "categorie" : "Entree",
+    "duree" : "25",
+    "ingredients" : [ 
+        "oeufs", 
+        "lardons", 
+        "crème", 
+        "pâte brisée"
+    ],
+    "difficulte" : "2",
+    "instructions" : "Mélanger les ingrédients. Etaler la pâte brisée. Répartir les ingrédients dessus et mettre au four 180°C pendant 25 min"
+}
+
+/* 2 */
+{
+    "_id" : ObjectId("5ac0e8021a8fee174c79eab1"),
+    "nom" : "salade de tomates",
+    "categorie" : "Entree",
+    "duree" : "5",
+    "ingredients" : [ 
+        "tomates", 
+        "oignons", 
+        "vinaigrette"
+    ],
+    "difficulte" : "1",
+    "instructions" : "Couper les tomates. Faites de même avec les oignons. Répartir la vinaigrette dessus. "
+}
+
+/* 3 */
+{
+    "_id" : ObjectId("5ac0e8481a8fee174c79eab2"),
+    "nom" : "Salade de fruits d'hiver",
+    "categorie" : "Dessert",
+    "duree" : "5",
+    "ingredients" : [ 
+        "pommes", 
+        "poires", 
+        "banane", 
+        "orange"
+    ],
+    "difficulte" : "1",
+    "instructions" : "Peler les fruits et les épépiner, les couper en quartier. \nMélanger le tout"
+}
+
+/* 4 */
+{
+    "_id" : ObjectId("5ac0e9461a8fee174c79eab3"),
+    "nom" : "pâtes à la bolognaise",
+    "categorie" : "Plat",
+    "duree" : "25",
+    "ingredients" : [ 
+        "pâtes", 
+        "boeuf", 
+        "oignons", 
+        "tomates", 
+        "herbes de provence", 
+        "gruyère"
+    ],
+    "difficulte" : "1",
+    "instructions" : "Hacher la viande, la faire revenir avec des oignons dans un peu d'huile. Mettre ensuite les tomates couper en quartier avec les herbes de provence et faire mijoter 15 min. Pendant ce temps mettre à cuire les pâtes. Répartir en fin de cuisson la bolognaise sur les pâtes et parsemer de gruyère."
+}
+
+/* 5 */
+{
+    "_id" : ObjectId("5ac0ea801a8fee174c79eab4"),
+    "nom" : "Tarte aux pommes",
+    "categorie" : "Dessert",
+    "duree" : "40",
+    "ingredients" : [ 
+        "pommes", 
+        "pâte feuilletée", 
+        "sucre", 
+        "beurre"
+    ],
+    "difficulte" : "1",
+    "instructions" : "Peler les pommes et les épépiner. Mettre la moitié à revenir avec du beurre et du sucre. Une fois cuit, mixer pour obtenir de la compote qui sera réparti au fond de la pâte. Puis mettre les pommes couper en quartier. Mettre à cuire 25 min à 180°C"
+}
+
+/* 6 */
+{
+    "_id" : ObjectId("5ac0f74c1db2631d9887fcbe"),
+    "nom" : "salade composée",
+    "categorie" : "Entree",
+    "duree" : "10",
+    "ingredients" : [ 
+        "salade", 
+        "tomates", 
+        "chèvre", 
+        "vinaigrette"
+    ],
+    "difficulte" : "1",
+    "instructions" : "Mélanger les ingrédients "
+}
+
+/* 7 */
+{
+    "_id" : ObjectId("5ac0fa3d638f8e1a98bb1d44"),
+    "nom" : "fraises au sucre",
+    "categorie" : "Dessert",
+    "duree" : "5",
+    "ingredients" : [ 
+        "fraises", 
+        "sucre"
+    ],
+    "difficulte" : "1",
+    "instructions" : "Laver les fraises, et les couper. Ajouter le sucre. "
+}

@@ -1,0 +1,60 @@
+<div id="global">
+  <h1>Que vous reste-t-il au frigo?</h1>
+  <div id="publication">
+    <div class="imageRecette">
+      <img src="">
+    </div>
+
+    <div class="formulaire-recette">
+      <form #recetteForm="ngForm" (ngSubmit)="rechercheRecette(recetteForm.value)" class="" novalidate method="post" action="">
+        <div class="formRecette">
+          <label for="ingredients">Vos Ingrédients</label>
+          <br/>
+          <a [routerLink] = "['/ingredients']" class="nav-item nav-link">Ajouter des ingredients</a>
+          <br/>
+          <input [(ngModel)]="recette.ingredients" minlength="3" maxlenght="30" type="text" name="ingredients" #ingredients="ngModel"
+            class="form-control" id="" placeholder="ingredients" required >
+          <div *ngIf="ingredients.required && (ingredients.dirty||ingredients.touched)">
+            <p *ngIf="error">
+              le nom de l'ingredients doit contenir au moins 3 caractères
+            </p>
+          </div>
+        </div>
+
+        <button type="submit" [disabled]="!recetteForm.form.valid ">valider</button>
+        <br/>
+      </form>
+    </div>
+    <div class="listeRecette">
+      <div *ngFor="let recette of listeProposition |valueArray" class="liste">
+        <p>nom de la recette: {{recette.nom}}</p>
+        <p>ingredients nécessaires: {{recette.ingredients}}</p>
+        <button class="btn btn-lg btn-outline-primary" (click)="open(recette,content)">
+          Détails de la recette
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+<ng-template #content let-c="close" let-d="dismiss">
+  <div class="modal-header">
+    <h4 class="modal-title">Détails de la {{recette.nom}}</h4>
+    <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <p>Nom de la recette : {{recette.nom}}</p>
+    <p>Catégorie : {{recette.categorie}}</p>
+    <p>Durée (préparation + cuisson) : {{recette.duree}} min</p>
+    <p>Ingrédients : {{recette.ingredients}}</p>
+    <p>Instructions : {{recette.instructions}}</p>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="c('Close click')">Fermer</button>
+  </div>
+</ng-template>
+
+<hr>
+
+<pre>{{closeResult}}</pre>

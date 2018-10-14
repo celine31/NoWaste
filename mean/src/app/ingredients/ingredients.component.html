@@ -1,0 +1,78 @@
+<h1> Liste de mes ingrédients</h1>
+<div id="ingredients">
+  <div class="conteneur">
+    <h2> Ma sélection d'ingrédients</h2>
+    <div>
+      <!--parcours un tableau et affiche les ingredients
+    *ngFor let ingredient of ingredients
+    {{ingredient}}
+     Le tableau $_POST['prenom'] contient les valeurs des checkbox cochées
+foreach($_POST['prenom'] as $valeur)
+{
+   echo "La checkbox $valeur a été cochée<br>";
+}
+$genres=implode(';', $_POST['name'])
+/*
+Si l'utilisateur coche Adriana et Candice, 
+cet exemple va afficher:
+La checkbox Adriana a été cochée
+La checkbox Candice a été cochée
+*/
+    -->
+    </div>
+  </div>
+
+  <div class="conteneur">
+    <h2>Mes restes</h2>
+    <form [formGroup]="ngForm" (ngSubmit)="afficher()" method="post">
+      <ngb-accordion #acc="ngbAccordion" activeIds="ngb-panel-0">
+        <ngb-panel title="LEGUMES">
+          <ng-template ngbPanelContent>
+            <label for="aubergine">aubergine</label>
+            <input type="checkbox" value="aubergine" name="aubergine" formControlName="ingredients" (click)="afficher(ngForm.ingredients)">
+            <label for="carotte">carotte</label>
+            <input type="checkbox" value="carotte" name="carotte" formControlName="ingredients">
+            <label for="carotte">carotte</label>
+            <input type="checkbox" value="courgette" name="courgette">
+            <label for="poivron">poivron</label>
+            <input type="checkbox" value="poivron" name="ingredients[]">
+            <label for="salade">salade</label>
+            <input type="checkbox" value="salade" name="ingredients[]">
+            <label for="tomates">tomates</label>
+            <input type="checkbox" value="tomates" name="ingredients[]">
+          </ng-template>
+        </ngb-panel>
+
+        <ngb-panel title="FRUITS">
+          <ng-template ngbPanelContent>
+            <label for="fraises">fraises</label>
+            <input type="checkbox" value="fraises" name="fraises" (click)="ajoutProduit()">
+            <label for="pommes">pommes</label>
+            <input type="checkbox" value="pommes" name="pommes" (click)="ajoutProduit()">
+            <label for="banane">banane</label>
+            <input type="checkbox" value="banane" name="banane" (click)="ajoutProduit()">
+          </ng-template>
+        </ngb-panel>
+        <ngb-panel title="VIANDE">
+          <ng-template ngbPanelContent>
+            <label for="boeuf">boeuf</label>
+            <input type="checkbox" value="boeuf" name="boeuf">
+            <label for="poulet">poulet</label>
+            <input type="checkbox" value="poulet" name="poulet">
+            <label for="porc">porc</label>
+            <input type="checkbox" value="porc" name="porc">
+          </ng-template>
+        </ngb-panel>
+      </ngb-accordion>
+      <input type="submit" value="Envoyer" />
+    </form>
+  </div>
+</div>
+
+<!--<form action="index.php" method="post">
+    <input type="checkbox" name="prenom[]" value="adriana" />Adriana<br>
+    <input type="checkbox" name="prenom[]" value="alessandra" />Alessandra<br>
+    <input type="checkbox" name="prenom[]" value="candice" />Candice<br>
+    <input type="checkbox" name="prenom[]" value="lili" />Lili<br>
+    <input type="submit" value="Envoyer" />
+ </form>-->

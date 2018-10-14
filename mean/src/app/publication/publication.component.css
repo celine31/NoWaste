@@ -1,0 +1,33 @@
+h1{
+    margin-top: 100px;
+    color: green;
+    text-align: center;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+input, select, textarea{
+    max-width: 400px;
+}
+
+.formulaire-recette{
+    margin-top:50px;
+    max-width:900px;
+    margin-left:auto;
+    margin-right:auto;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+label{
+    font-size:20px;
+}
+
+boutonsValidation{
+    display:flex;
+}
+.ng-valid[required], .ng-valid.required  {
+    border-left: 5px solid #42A948; /* green */
+  }
+  
+  .ng-invalid:not(form)  {
+    border-left: 5px solid #a94442; /* red */
+  }

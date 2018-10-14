@@ -1,0 +1,32 @@
+<h1>Liste des recettes publiées</h1>
+<div class="listeRecette">
+ <div *ngFor="let recette of listeRecette |valueArray" class="liste">
+  <p class="recetteNom">Nom de la recette : {{recette.nom}}</p>
+  <p>Catégorie de la recette : {{recette.categorie}}</p>
+  <button class="btn btn-lg btn-outline-primary" (click)="open(recette,content)">
+    Détails de la recette
+  </button>
+</div>
+</div>
+<!-- Button trigger modal -->
+
+<ng-template #content let-c="close" let-d="dismiss">
+  <div class="modal-header">
+    <h4 class="modal-title">Détails de la {{recette.nom}}</h4>
+    <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <p>Nom de la recette : {{recette.nom}}</p>
+    <p>Catégorie : {{recette.categorie}}</p>
+  <p>Durée (préparation + cuisson) : {{recette.duree}} min</p>
+  <p>Ingrédients : {{recette.ingredients}}</p>
+  <p>Instructions : {{recette.instructions}}</p>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="c('Close click')">Fermer</button>
+  </div>
+  </ng-template>
+<hr>
+<pre>{{closeResult}}</pre>

@@ -1,0 +1,113 @@
+.btn-outline-primary {
+  color: green;
+  border-color: green;
+  border-color: green;
+  box-shadow: green;
+}
+
+.btn-outline-primary:hover,
+.btn-outline-primary:focus,
+.btn:focus {
+  color: white;
+  border-color: green;
+  background-color: green;
+  box-shadow: white;
+}
+
+.liste {
+  text-align: center;
+  padding: 20px;
+  margin: 20px;
+  display: block;
+  margin: 10px;
+  border: 1px solid green;
+  border-radius: 5px;
+  box-shadow: 1px 2px green;
+  height: 200px;
+  width: 300px;
+}
+
+/**.ng-valid {
+  border-color: green;
+}
+
+.ng-invalid {
+  border-color: red;
+}
+**/
+h1 {
+  margin-top: 100px;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  text-align: center;
+  color: green;
+}
+
+input,
+button {
+  max-width: 400px;
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  margin:10px;
+}
+.formulaire-recette{
+  margin-top:50px;
+  max-width:900px;
+  margin-left:auto;
+  margin-right:auto;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.listeRecette {
+  margin-left: 25px;
+  margin-right:20px;
+  display: flex;
+  flex-direction: row;
+  align-content: space-between;
+  flex-wrap: wrap;
+  width: 1300px;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-size: 15px;
+}
+
+.modal-header,
+.modal-body {
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-size: 15px;
+}
+
+h4 {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.ng-valid[required], .ng-valid.required  {
+  border-left: 5px solid #42A948; /* green */
+}
+
+.ng-invalid:not(form)  {
+  border-left: 5px solid #a94442; /* red */
+}
+
+/**gestion de l'affichage pour le responsive**/
+@media screen and (max-width: 1200px) {
+  .listeRecette {
+    width: 1000px;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .listeRecette {
+    width: 800px;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .listeRecette {
+    width: 600px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .listeRecette {
+    width: 400px;
+  }
+}
